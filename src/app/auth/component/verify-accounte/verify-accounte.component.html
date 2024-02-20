@@ -1,0 +1,58 @@
+
+
+<form [formGroup]="verifyForm" >
+
+
+
+<mat-dialog-content>
+<h2 mat-dialog-title>Hi </h2>
+
+
+
+
+ <!-- -------------------------------email------------------- -->
+ <div class="input-group flex-nowrap py-2 ">
+    <span class="input-group-text" id="addon-wrapping"> 
+      <!-- <i class="fa-solid fa-mobile-screen"></i> -->
+      <i class="fa-regular fa-envelope"></i>
+    
+    </span>
+
+    <input type="email" class="form-control"
+    formControlName="email"  placeholder="Enter your E-mail">
+  
+
+
+
+  </div>
+
+
+ <!-- -------------------------------code------------------- -->
+
+  <div class="input-group flex-nowrap py-2">
+    <span class="input-group-text" id="addon-wrapping"> 
+      <i class="fa-solid fa-mobile-screen"></i>
+    </span>
+    <input type="text" class="form-control"
+  formControlName="code"   placeholder="Code">
+  </div>
+
+
+
+
+</mat-dialog-content>
+
+
+    <!-- button -->
+<mat-dialog-actions class=" d-center justify-content-between">
+  <button class="border-0  p-2 rounded-1  bg-main text-white " 
+  mat-button (click)="onNoClick()">Close</button>
+
+
+  
+  <button class="border-0 p-2  rounded-1  bg-main text-white "
+   mat-button [mat-dialog-close]
+  ="verifyForm.value" cdkFocusInitial>Send Code</button>
+</mat-dialog-actions>
+
+</form>

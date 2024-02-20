@@ -1,0 +1,78 @@
+#register{
+    height: 100vh;
+ 
+    background-image: url(../../component/../../../assets/image/auth.bg.png);
+    
+        // background-image: url(../../../assets/image/auth.bg.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        #auth-form{
+            // background-color: aqua;
+            .regForm{
+                width: 45%;
+     
+            }
+            .caption{
+ 
+                padding-inline: 4rem;
+              }
+        
+        
+        
+            }
+
+
+    }
+
+
+
+
+
+    @media screen and (max-width:992px ) {
+       #register{
+
+       
+       
+       
+        #auth-form{
+            
+            .input-form{
+                flex-direction: column;
+            }
+            
+            
+            .regForm{
+                width: 100%;
+            //     background-color: aqua;
+            //     padding-inline: 2rem;
+            //     input{
+            // background-color: rebeccapurple;
+            // width: 100%;
+            // padding-inline: 2rem;
+            //     }
+                }
+            // .regForm:nth-child(2) {
+            // display: flex;
+            // flex-direction: column-reverse;
+            //   }
+        }
+    }
+
+
+
+
+    }
+
+
+
+
+
+// #auth-form{
+//     background-color: antiquewhite;
+//     padding-left: 1rem;
+//     .regForm{
+//         width: 45%;
+
+//     }
+// }
