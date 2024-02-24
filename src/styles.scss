@@ -49,7 +49,20 @@ $mainColor:#4aa35a;
 
 // ------------------main Class--------------------
 .bg-main{
-  background-color: $mainColor;
+  background-color: $mainColor !important;
+}
+button{
+  &.btn-main{
+
+  
+  color:white;
+  border-radius: 8px;
+  padding: 20px 15px;
+  border: none;
+  font-size:20px;
+  font-weight: 700;
+  line-height:24.4px;
+  }
 }
 .bg-main-25{
   background-color: rgba(74, 163, 90,0.5);
@@ -60,6 +73,18 @@ $mainColor:#4aa35a;
   display: flex;
 justify-content: center;
 align-items: center;
+}
+
+
+.bg-dark{
+ background-color: #1F263E !important;
+}
+.text-dark{
+  color: #1F263E !important;;
+}
+.text-dark-op{
+  color:rgba(31, 38, 62,0.5);
+ 
 }
 // ------------------------------------------------
 

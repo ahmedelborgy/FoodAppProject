@@ -1,0 +1,55 @@
+<section class="row mb-2 justify-content-end align-items-center mx-0" id="navbar">
+
+<div class="col-8 d-center mb-2 py-3">
+
+  <div class="input-group  mt-2 position-relative rounded-4 ">
+    <input type="text" class="form-control"  placeholder="Search Here">
+    <div class="input-group-append translate-middle-y  ">
+      <!-- <button class="btn btn-primary" type="button">Search</button> -->
+      <i class="fa-solid fa-search fs-4 test-dark"></i>
+    </div>
+  </div>
+
+</div>
+
+  <div class="col-4 mt-3 ">
+
+<ul class="list-unstyled   w-75 ms-auto d-flex text-dark justify-content-around 
+align-items-center">
+<li class=" d-center align-items-center">
+    <img src="assets/image/profiol-img.png" alt="profile" class="">
+    <h4 class=" text-dark  mb-0 ms-3 text-capitalize">{{userName?userName:'Upskilling'}}</h4>
+ 
+</li>
+
+<li>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      
+        <mat-icon> expand_more</mat-icon>
+     
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="myLogOut()" mat-menu-item >
+     
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+         </button>
+      
+      </mat-menu>
+      
+</li>
+
+<li>
+    <mat-icon>notifications</mat-icon>
+   
+
+</li>
+</ul>
+
+
+
+
+
+</div>
+
+</section>

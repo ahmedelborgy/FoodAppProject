@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalInterceptor } from './auth/Interceptor/global.interceptor';
+import { DashbordesModule } from './dashbordes/dashbordes.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,6 +20,7 @@ import { GlobalInterceptor } from './auth/Interceptor/global.interceptor';
     BrowserAnimationsModule,
     AuthModule,
     SharedModule,
+    // DashbordesModule
     
     
   ],

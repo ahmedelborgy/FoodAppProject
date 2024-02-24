@@ -1,0 +1,78 @@
+<!-- ---------------start header of home ------------->
+
+
+
+
+<section id="home" >
+    <section class="container ">
+        <section class="row flex-nowrap ">
+         
+
+
+         <figcaption class="col-6  d-flex flex-column justify-content-center  ps-5 text-white ">
+            <h2 class="text-start">Welcome <span class=" text-capitalize">{{userName?userName:'Upskilling !'}}
+            </span></h2>
+            <p class="">This is a welcoming screen for the entry of the application , you can now see the options</p>
+        </figcaption>
+
+
+        <div class="col-6  ">
+
+       
+        <figure class=" m-0 d-flex justify-content-end ">
+       <img src="assets/image/hom-img.png" alt="home-img" class="w-50 d-block ">
+       </figure>
+
+    </div>
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+</section>
+
+
+
+<!-- ---------------end header of home ---------------->
+
+
+
+
+<!-- ---------------start  Fill the Recipes  of home ---------------->
+
+<section class="container " *ngIf="userGroup == 'SuperAdmin'">
+
+
+
+<section class="row mt-2 ps-5 py-2 d-center" id="fillRecipes">
+
+<div class="col-6 ">
+    <h4 class="text-dark fw-semibold m-0">Fill the <span class="text-main fw-bold">Recipes</span> !</h4>
+
+
+    <p class="text-dark"> you can now fill the meals easily using the table and form , click here and sill it with the table !
+    </p>   
+
+</div>
+
+
+    <div class=" col-6 d-center justify-content-end">
+<button class="btn-main d-center">Fill Recipes <span><i class="fa-solid ms-2 fa-arrow-right "></i></span></button>
+    </div>
+    
+    
+    </section>
+
+
+
+
+</section>
+
+    <!-- ---------------end  Fill the Recipes  of home ---------------->
+   
+    

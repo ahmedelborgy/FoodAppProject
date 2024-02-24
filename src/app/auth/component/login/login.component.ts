@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { AuthService } from '../../authService/auth.service';
@@ -24,7 +25,8 @@ export class LoginComponent {
   // name: any;
 constructor(
  private _Router:Router,
-  public dialog: MatDialog,private auth:AuthService,
+  public dialog: MatDialog,
+  private auth:AuthService,
   private toastr: ToastrService){
 
 }
@@ -32,7 +34,7 @@ constructor(
 
   // ----------Reactive Forme------------ 
 loginForm=new FormGroup({
-    email:new FormControl(null,[
+    email:new FormControl('ahmedelborgy130@gmail.com',[
     Validators.required,
     Validators.email,
     Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
@@ -55,7 +57,7 @@ loginForm=new FormGroup({
 
 
 // -----------Method signIn()
-signIn(loginForm:any){
+signIn(loginForm:FormGroup){
 
 
 if(this.loginForm.valid){
@@ -64,7 +66,13 @@ if(this.loginForm.valid){
   this.auth.logIn(loginForm.value).subscribe({
     next:(res)=>{
       console.log(res);
-      
+
+      localStorage.setItem('userToken',res.token);
+
+      this.auth.getProfoile();
+ this._Router.navigate(['/dashbordes']);
+
+    
       // console.log(res.message);
     },
     error:(err)=>{

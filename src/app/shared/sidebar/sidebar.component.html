@@ -1,0 +1,71 @@
+
+<section class=" bg-dark vh-100 px-0 " id="isdeBar">
+<div class="text-center py-3">
+    <img src="assets/image/logo-noText.svg" alt="logo" class="w-100">
+   
+</div>
+
+
+<section class="list mt-5">
+<ul class="">
+ 
+<ng-container  *ngFor="let elem of menu">
+    <li *ngIf="elem.isActive" class="">
+        <a  class="text-dark-op"  [routerLink]="elem.link" 
+        routerLinkActive="bg-main-trasparent   text-white">
+          <span class="text-white fs-4" [innerHTML]="elem.icone"></span>
+          <span>{{elem.text}}</span></a>
+  </li>
+
+ 
+  
+
+</ng-container>
+ 
+
+       
+    <!-- <li>
+        <a href="">
+          <span> <i class="fa-solid fa-home"></i></span>
+          <span>Home</span>
+
+       </a>
+  </li>
+       
+  <li>
+    <a href="">
+      <span> <i class="fa-solid fa-home"></i></span>
+      <span>Home</span>
+
+   </a>
+</li>
+       
+<li>
+    <a href="">
+      <span> <i class="fa-solid fa-home"></i></span>
+      <span>Home</span>
+
+   </a>
+</li>
+       
+<li>
+    <a href="">
+      <span> <i class="fa-solid fa-home"></i></span>
+      <span>Home</span>
+
+   </a>
+</li> -->
+
+
+
+</ul>
+
+
+</section>
+
+
+
+
+
+
+</section>

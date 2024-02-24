@@ -1,0 +1,55 @@
+#isdeBar{
+   border-top-right-radius: 58px; 
+
+
+ul{
+    list-style-type: none;
+    // padding-left:0px;
+    // background-color: yellow;
+     padding:0rem;
+    li{
+        // padding-left: 10px;
+        padding-block: 10px;
+        margin-block: 10px;
+       
+        display: flex;
+        align-items: center;
+       
+        a{
+            text-decoration: none;
+            padding: 10px;
+           
+         color:rgba(100, 120, 185);;
+            display: block;
+            width: 95%;
+            margin: auto;
+            font-size: 1rem;
+            span{
+                margin: 0px 5px;
+               
+            }
+        }
+    }
+
+    .bg-main-trasparent{
+      background-color:#0092471A;
+      position: relative;
+      color: white;
+      padding: 10px;
+    }
+    .bg-main-trasparent::before{
+    content: '';
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: 0;
+    left:-5px;
+    background-color: #009247;
+
+      }
+}
+
+
+}
+
