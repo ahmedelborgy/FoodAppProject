@@ -14,15 +14,23 @@ export class GlobalInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
-    const token=localStorage.getItem('token');
+    let token=localStorage.getItem('userToken');
     const basUrl:string='https://upskilling-egypt.com/api/v1/';
+    // console.log(token);
+    
     let newRequest={}
-    if(token! === null){
-      newRequest={'Authorization': 'Bearer'+ token}
+    if(token   != null){
+      newRequest={'Authorization': `Bearer ${token}`}
     }
+    // console.log(newRequest);
+    
    request=request.clone({
-    setHeaders:newRequest,url:basUrl+request.url
+    setHeaders:newRequest,
+    url:basUrl+request.url,
+   
+
    })
+   
 
     return next.handle(request);
   }

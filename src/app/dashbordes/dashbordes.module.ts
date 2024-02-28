@@ -10,12 +10,17 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     DashbordesComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     CommonModule,
     DashbordesRoutingModule,
     SharedModule
+  ],
+  exports:[
+    HomeComponent,
+  
   ]
 })
 export class DashbordesModule { }

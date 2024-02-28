@@ -1,0 +1,25 @@
+
+<mat-dialog-content id="delet" class="p-0 m-0 ">
+<section class=" position-relative py-3 px-3">
+
+
+    <button class="btn  deletbtn ms-auto d-block" 
+    (click)="onNoClick()"><i class="fa-solid  fa-close textc-danger">
+
+    </i></button>
+
+<div class=" text-center text-capitalize">
+    <img src="../../../assets/image/delet.svg" alt="" class="w-25">
+
+    <h3>Delete This {{data.item.name}} ?</h3>
+    <p>are you sure you want to delete {{data.item.name}}?
+         if you are sure just click on delete it</p>
+</div>
+<hr >
+
+<button class="btn bBtn  ms-auto d-block textc-danger border-1 border border-danger" 
+   [mat-dialog-close]="data.item.id" >Delete this item</button>
+
+</section>
+</mat-dialog-content>
+

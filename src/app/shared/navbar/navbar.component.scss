@@ -7,11 +7,13 @@
    align-items: center;
 }
 // ---------------
-.input-group-append{
+// .input-group-append 
+.search-icon{
     position: absolute;
     top: 50%;
     left: 20px;
 transform: translatey(50%);
+
 }
 input::placeholder{
 color:#1F263E;
@@ -19,8 +21,6 @@ padding-left: 40px;
 opacity: 0.25;
 font-size: 15px;
 font-weight: 500;
-
-
 }
 .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control, .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select, .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
      border-top-right-radius: 20px; 

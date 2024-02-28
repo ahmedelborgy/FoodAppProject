@@ -12,20 +12,30 @@
       <h2>Register</h2>
   <p>Welcome Back! Please enter your details</p>
 
-
+  
   <form  class="" [formGroup]="registerForm" (ngSubmit)="signUp(registerForm)">
  <!-- ------------------------------UserImage------------------- -->
-<ngx-dropzone (change)="onSelect($event)" class="h-25 ">
+<ngx-dropzone #drop (change)="onSelect($event)" class="h-25" 
+accept="image/jpeg,image/jpg,image/png,image/gif">
 
 	<ngx-dropzone-label class="d-center flex-column ">
-    Drop it, baby!
+    Drop it,Image
     <i class="fa-regular p-1 fa-square-caret-up fs-3 bg-main text-white"></i>
   </ngx-dropzone-label>
 	
-  <ngx-dropzone-image-preview class="d-center" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of filesm" [file]="f">
-    <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+  <ngx-dropzone-image-preview class="d-center" 
+  ngProjectAs="ngx-dropzone-preview" 
+  *ngFor="let f of filesm" [removable]="true"  [file]="f" 
+  (removed)="onRemove(f)">
+  <button mat-icon-button (click)="onRemove(f)" class="bg-info p-5" >
+    <mat-icon aria-label="Delete">delete</mat-icon>
+  </button>
   </ngx-dropzone-image-preview>
 </ngx-dropzone>
+
+<!-- ===================== -->
+
+
 
  <!-- -------------------------------UserImage------------------- -->
     <section class=" input-form d-flex justify-content-between">

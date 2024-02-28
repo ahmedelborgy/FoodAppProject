@@ -70,7 +70,7 @@ if(this.loginForm.valid){
       localStorage.setItem('userToken',res.token);
 
       this.auth.getProfoile();
- this._Router.navigate(['/dashbordes']);
+ this._Router.navigate(['/dashbordes/home']);
 
     
       // console.log(res.message);

@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
+import { CategoriesComponent } from './component/categories/categories.component';
+import { DashbordesModule } from '../dashbordes/dashbordes.module';
+import { SharedModule } from '../shared/shared.module';
+import { AddEditCategoryComponent } from './component/add-edit-category/add-edit-category.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    CategoriesComponent,
+    AddEditCategoryComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    DashbordesModule,
+    SharedModule
   ]
 })
 export class AdminModule { }

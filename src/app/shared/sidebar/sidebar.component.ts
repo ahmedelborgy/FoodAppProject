@@ -18,13 +18,13 @@ constructor(private auth:AuthService){
 // this.isUser()
 }
 isAdmin():boolean{
-  console.log(this.auth.role);
+  // console.log(this.auth.role);
   
  return this.auth.role=='SuperAdmin'?true:false;
 }
 
 isUser():boolean{
-  console.log(this.auth.role);
+  // console.log(this.auth.role);
   
   return this.auth.role=='SystemUser'?true:false;
 
@@ -48,7 +48,7 @@ icone:'<i class="fa-solid fa-table-list"></i>'
 },
 
 
-{text:'Categories',link:'/dashbordes/Categories',
+{text:'Categories',link:'/dashbordes/admin/categories',
 icone:'<i class="fa-regular fa-calendar-days"></i>',
 isActive:this.isAdmin()
 

@@ -1,0 +1,191 @@
+<section id="header" >
+    <section class="container ">
+        <section class="row flex-nowrap ">
+          
+
+
+         <figcaption class="col-6  d-flex flex-column justify-content-center  ps-5 text-white ">
+            <h2 class="text-start">Categories<span class=" text-capitalize">  Item</span></h2>
+            <p class="">You can now add your items that any user can order it from the Application and you can edit
+            </p>
+        </figcaption>
+
+
+        <div class="col-6  ">
+
+       
+        <figure class=" m-0 d-flex justify-content-end ">
+       <img src="../../../../assets/image/child-header.svg" alt="home-img" 
+       class="w-25 d-block ">
+       </figure>
+
+    </div>
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+</section>
+
+
+<!-- ------------------------button -------------- -->
+
+<section class="container " >
+  
+
+    <section class="row mt-2  py-2 d-center" id="fillRecipes">
+    
+    <div class="col-6 ">
+        <h4 class="text-dark m-0 fs-3 "> Categories Table Details </h4>
+    
+    
+        <p class="text-dark text-opacity-50 mt-1"> 
+            You can check all details
+        </p>   
+    
+    </div>
+    
+    
+        <div class=" col-6 d-center justify-content-end">
+    <button class="btn-main d-center" (click)="openDialogAddCategory()">Add New Category
+        
+        
+        </button>
+        </div>
+        <div class="col-8 d-center mb-2 py-3">
+            <!-- -----------------------------search input---------------------------------- -->
+              <div class="input-group  mt-2 position-relative rounded-4 ">
+                <input type="text" class="form-control"  placeholder="Search By Name" 
+                [(ngModel)]="searchKey" (keyup.enter)="searchCategory()">
+                <div class="input-group-append search-icon translate-middle-y  ">
+                  <i class="fa-solid fa-search fs-4 test-dark text-main"></i>
+                </div>
+              </div>
+            
+            </div>
+            
+        
+        </section>
+
+    
+    
+    
+    
+    </section>
+
+
+
+    <!-- -------------------------Table ---------------------- -->
+
+
+<section class="">
+<div class="table-responsive text-capitalize  ">
+    <table class="table table-striped fw-lighter fs-5 rounded-4 px-5">
+        <thead class="is-headerTable mb-5  ">
+            
+                <th scope="col"class="py-4 px-5 rounded-start-4 ">name</th>
+                <th scope="col" class="py-4">creation Date</th>
+                <th scope="col" class="py-4">modification Date</th>
+                <th scope="col" class="py-4 rounded-end-4 ">Actions</th>
+            
+        </thead>
+        <tbody  *ngIf="tableHead">
+            <tr *ngFor="let elem of tableHead let i=index" class="">
+                <td class="px-5 bg-transparent"  scope="row">{{elem.name}}</td>
+                <td>{{elem.creationDate |date}}</td>
+                <td>{{elem.modificationDate |date}}</td>
+                <td>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menu"
+                     aria-label="Example icon-button with a menu">
+                        <mat-icon color="primary" >more_horiz</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        
+                       
+                        <button mat-menu-item>
+                       
+                        <mat-icon color="primary">visibility</mat-icon>
+                          <span class="material-symbols-outlined">
+                            View
+                            </span>
+                        </button>
+
+                        <button mat-menu-item color="primary"
+                         (click)="openDialoEditCategory(elem)">
+                       
+                            <mat-icon color="primary">edit_square </mat-icon>
+                             
+
+                                <span class="material-symbols-outlined">
+                                    Edit
+                                    </span>
+                                    
+                            </button>
+    
+                            <button mat-menu-item (click)="openDeletDialog('3000ms','1500ms',elem)">
+                       
+                                <mat-icon color="primary">
+                                
+                                    delete
+                                    </mat-icon>
+                                  <span class="material-symbols-outlined">
+                                    delete
+                                    </span>
+    
+                                    
+                                        
+                                </button>
+
+                      </mat-menu>
+                      
+
+
+
+
+
+                </td>
+            </tr>
+          
+
+
+        </tbody>
+    </table>
+</div>
+
+
+<!-- ---------------------paginator------------------ -->
+<mat-paginator *ngIf="tableHead.length>0"
+
+[length]="totalRespose?.totalNumberOfRecords"
+[pageSize]="totalRespose?.pageSize"
+[pageIndex]="totalRespose?.pageNumber"
+[pageSizeOptions]="pageSizeOptions"
+(page)="handlePageEvent($event)"
+aria-label="Select page">
+
+</mat-paginator>
+
+<section class="notData w-75 m-auto text-center" *ngIf="tableHead.length==0">
+
+<img src="../../../../assets/image/delet.svg" alt="notfound">
+<h2 class="fs-3 mt-4" [style.color]="true?'#263238':''">No Data !</h2>
+<p>
+are you sure you want to delete this item ? if you are sure just click on delete it
+</p>
+</section>
+
+</section>
+
+
+
+
+
+
+
+

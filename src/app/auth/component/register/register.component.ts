@@ -19,6 +19,7 @@ import { NonNullAssert } from '@angular/compiler';
 })
 
 
+
 export class RegisterComponent {
 
   is_mess:string='';
@@ -111,6 +112,9 @@ for (const [k,v] of res) {
   myData.append(k,v);
 
 }
+// image/jpeg,image/jpg,image/png,image/gif
+// console.log(registerForm.value.profileImage);
+
 myData.append('profileImage',registerForm.value.profileImage);
 console.log(myData);
 
@@ -179,16 +183,23 @@ this.toastr.success('registeer: '+this.is_mess ,'Toastr fun!');
 
 
 filesm: File[] = [];
-
+f:any=this.filesm[0]
+e:any;
 onSelect(event:any) {
   console.log(event);
+  this.e=event;
   this. imageSrc=event.addedFiles[0];
+  console.log(this.imageSrc);
+  
   this.filesm.push(...event.addedFiles);
 }
 
 onRemove(event:any) {
   console.log(event);
-  this.filesm.splice(this.files.indexOf(event), 1);
+  // this.filesm.splice(this.files.indexOf(event), 1);
+    this.filesm.splice(this.imageSrc,1);
+
+
 }
 // <!-- ------------------------openDialog Have a Code dialog-------------------------- -->
 
