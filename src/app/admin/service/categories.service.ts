@@ -10,7 +10,7 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 export class CategoriesService {
 
   constructor(private http:HttpClient) { }
-
+  // ===========getAllGategories===============
 getAllGategories( s:number,n: number,search:string):Observable<any>{
 
 return this.http.get('Category',{params:{pageSize:s,pageNumber:n,name:search}})

@@ -36,12 +36,12 @@ link:'/dashbordes/home',
 icone:'<i class="fa-solid fa-house"></i>',
 isActive:this.isAdmin() ||this.isUser()
 },
-{text:'Users',link:'/dashbordes/Users',
+{text:'Users',link:'/dashbordes/admin/Users',
 icone:'<i class="fa-solid fa-users"></i>',
 isActive:this.isAdmin()
 
 },
-{text:'Recipes',link:'/dashbordes/Recipes',
+{text:'Recipes',link:'/dashbordes/admin/recipes',
 icone:'<i class="fa-solid fa-table-list"></i>'
 ,isActive:this.isAdmin() ||this.isUser()
 

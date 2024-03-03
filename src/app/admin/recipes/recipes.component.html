@@ -1,0 +1,271 @@
+
+<!-- ---------------------heeader----------------- -->
+<section id="header" >
+    <section class="container ">
+        <section class="row flex-nowrap d-center">
+          
+
+
+         <figcaption class="col-6  d-flex flex-column justify-content-center  ps-5 text-white ">
+            <h2 class="text-start">Recipes
+               <span class=" text-capitalize">Item</span></h2>
+          
+          
+          
+                <p class="">You can now add your items that any user can order it from the Application and you can edit
+            </p>
+        </figcaption>
+
+
+        <div class="col-6  ">
+
+       
+        <figure class=" m-0 d-flex justify-content-end ">
+       <img src="../../../../assets/image/child-header.svg" alt="home-img" 
+       class="w-25 d-block ">
+       </figure>
+
+    </div>
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+</section>
+
+
+
+
+<!-- ------------------------button -------------- -->
+
+<section class="container " >
+  
+
+    <section class="row mt-2  py-2 d-center" id="fillRecipes">
+    
+    <div class="col-6 ">
+        <h4 class="text-dark m-0 fs-3 "> Categories Table Details </h4>
+    
+    
+        <p class="text-dark text-opacity-50 mt-1"> 
+            You can check all details
+        </p>   
+    
+    </div>
+    
+    
+        <div class=" col-6 d-center justify-content-end">
+    <button class="btn-main d-center" (click)="openDialogRecipy()">Add New Recipy
+        
+        
+        </button>
+        </div>
+                    <!-- -----------------------------search input---------------------------------- -->
+<section class="searchRecipy row  d-center my-4 ">
+    <div class="col-6  mb-1 d-flex align-items-start">
+        
+            <div class="input-group  position-relative rounded-4 ">
+                <span class="input-group-text" id="addon-wrapping"> 
+                    <i class="fa-solid fa-search fs-4 test-dark text-main"></i>
+        
+                  </span>
+
+
+          <input type="text" class="form-control" 
+           placeholder="Search By Name" 
+          [(ngModel)]="searchKey" (keyup.enter)="searchRecipey()">
+        
+          
+        </div> 
+   
+       
+      </div>
+
+<!-- -----------------------option 1 select by tage----------------- -->
+      <div class="col-3">
+        <!-- <h4>mat-select</h4> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Choose By Tage</mat-label>
+          <mat-select class="">
+            <mat-option *ngFor="let tage of tableTges" value="option1" 
+            (click)="getTagId(tage.id)">{{tage.name}}</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!-- -----------------------option 1 select by Catogery----------------- -->
+      <!-- (click)="getCatogeryId(catogeryKey) -->
+      <div class="col-3">
+        <!-- <h4>mat-select</h4> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Choose By Catogery</mat-label>
+          <mat-select  [(ngModel)]="catogeryKey" name="catogeryKey">
+          
+            <mat-option (click)="getRecipes()"  *ngFor="let itemCat of tableCat" [value]="itemCat.id">{{itemCat.name}}</mat-option>
+           
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <p class="bg-danger">{{catogeryKey}}</p>
+</section>
+
+     
+            
+        
+        </section>
+
+    
+    
+    
+    
+    </section>
+
+
+    <!-- -------------------table--------------------- -->
+    <!-- Item Name
+    Image
+    Price
+    Description
+    tag
+    Category 
+    https://upskilling-egypt.com:443/files/users/images/889eatingveganfood-rafiki.png
+https://upskilling-egypt.com/files/users/images/889eatingveganfood-rafiki.png
+-->
+
+    <section class="">
+        <div class="table-responsive text-capitalize  ">
+            <table class="table table-striped fw-lighter fs-6 rounded-4 px-5">
+                <thead class="is-headerTable mb-5  ">
+                    
+<tr>
+
+      
+                        <th scope="col"class="py-4  rounded-start-4  ">Name</th>
+                        <th scope="col" class="py-4">Image</th>
+                        <th scope="col" class="py-4">Price</th>
+                        <th scope="col" class="py-4">Description</th>
+                        <th scope="col" class="py-4">tag</th>
+                        <th scope="col" class="py-4 rounded-end-4 ">Category </th>
+                        <th scope="col" class="py-4 rounded-end-4 ">Actions</th>
+
+                    </tr>
+            
+                </thead>
+                <tbody  *ngIf="tableHead">
+                    <tr *ngFor="let elem of tableHead let i=index" class="">
+
+
+                        <td class=" bg-transparent "  scope="row">{{elem.name}}</td>
+                        <td>
+                            
+                            
+                       
+                        <img [src]="elem.imagePath?pathImag+elem.imagePath:dummyImg" alt="" class="recipyImg">
+                        </td>
+                        <td>{{elem.price}}</td>
+                        <td>{{elem.description!='undefined'?elem.description:'myRecipey'}}</td>
+                        
+                        <td>{{elem.tag.name}}</td>
+                        <td>
+                            
+                            <span *ngFor="let item of elem.category"> {{item.name}}</span>
+                            
+                            
+                           
+                        
+                        
+                        
+                        
+                        
+                        
+                        </td>
+
+                        <td>
+        
+                            <button mat-icon-button [matMenuTriggerFor]="menu"
+                             aria-label="Example icon-button with a menu">
+                                <mat-icon color="primary" >more_horiz</mat-icon>
+                              </button>
+                              <mat-menu #menu="matMenu">
+                                
+                               
+                                <button mat-menu-item>
+                               
+                                <mat-icon color="primary">visibility</mat-icon>
+                                  <span class="material-symbols-outlined">
+                                    View
+                                    </span>
+                                </button>
+        
+                                <button mat-menu-item color="primary"
+                                 (click)=" openDialogRecipy()">
+                               
+                                    <mat-icon color="primary">edit_square </mat-icon>
+                                     
+        
+                                        <span class="material-symbols-outlined">
+                                            Edit
+                                            </span>
+                                            
+                                    </button>
+            
+                                    <button mat-menu-item >
+                               
+                                        <mat-icon color="primary">
+                                        
+                                            delete
+                                            </mat-icon>
+                                          <span class="material-symbols-outlined">
+                                            delete
+                                            </span>
+            
+                                            
+                                                
+                                        </button>
+        
+                              </mat-menu>
+                              
+        
+        
+        
+        
+        
+                        </td>
+                    </tr>
+                  
+        
+        
+                </tbody>
+            </table>
+        </div>
+        
+        
+        <!-- ---------------------paginator------------------ -->
+        <!-- <mat-paginator *ngIf="tableHead.length>0"
+        
+        [length]="totalRespose?.totalNumberOfRecords"
+        [pageSize]="totalRespose?.pageSize"
+        [pageIndex]="totalRespose?.pageNumber"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="handlePageEvent($event)"
+        aria-label="Select page">
+        
+        </mat-paginator>
+         -->
+        <section class="notData w-75 m-auto text-center" *ngIf="tableHead.length==0">
+        
+        <img src="../../../../assets/image/delet.svg" alt="notfound">
+        <h2 class="fs-3 mt-4" [style.color]="true?'#263238':''">No Data !</h2>
+        <p>
+        are you sure you want to delete this item ? if you are sure just click on delete it
+        </p>
+        </section>
+        
+        </section>
+        
+        

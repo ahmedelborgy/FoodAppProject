@@ -7,13 +7,15 @@ import { CategoriesComponent } from './component/categories/categories.component
 import { DashbordesModule } from '../dashbordes/dashbordes.module';
 import { SharedModule } from '../shared/shared.module';
 import { AddEditCategoryComponent } from './component/add-edit-category/add-edit-category.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     CategoriesComponent,
-    AddEditCategoryComponent
+    AddEditCategoryComponent,
+    RecipesComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,10 @@
+
+<!-- ---------------------heeader----------------- -->
+
+
 <section id="header" >
     <section class="container ">
-        <section class="row flex-nowrap ">
+        <section class="row flex-nowrap  d-center">
           
 
 
@@ -60,11 +64,16 @@
         <div class="col-8 d-center mb-2 py-3">
             <!-- -----------------------------search input---------------------------------- -->
               <div class="input-group  mt-2 position-relative rounded-4 ">
+                <span class="input-group-text" id="addon-wrapping"> 
+                    <i class="fa-solid fa-search fs-4 test-dark text-main"></i>
+        
+                  </span>
+               
                 <input type="text" class="form-control"  placeholder="Search By Name" 
                 [(ngModel)]="searchKey" (keyup.enter)="searchCategory()">
-                <div class="input-group-append search-icon translate-middle-y  ">
+                <!-- <div class="input-group-append search-icon translate-middle-y  ">
                   <i class="fa-solid fa-search fs-4 test-dark text-main"></i>
-                </div>
+                </div> -->
               </div>
             
             </div>

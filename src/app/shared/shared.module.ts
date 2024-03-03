@@ -17,7 +17,7 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { DeletComponent } from './delet/delet.component';
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     SidebarComponent,
@@ -45,8 +45,9 @@ import { DeletComponent } from './delet/delet.component';
     MatMenuModule,
     MatButtonModule,
 
-    MatTableModule, MatPaginatorModule
-
+    MatTableModule, 
+    MatPaginatorModule,
+    MatSelectModule
   ],
   exports:[
     SidebarComponent,
@@ -66,8 +67,8 @@ import { DeletComponent } from './delet/delet.component';
      MatMenuModule,
      MatButtonModule,
      MatTableModule,
-      MatPaginatorModule
-
+      MatPaginatorModule,
+      MatSelectModule
   ]
 })
 export class SharedModule { }

@@ -55,7 +55,7 @@ this.getCategories();
 
   }
   
-
+// ----------------getCategories
   getCategories(){
     console.log(this.searchKey);
 this.catgSrv.getAllGategories( 
