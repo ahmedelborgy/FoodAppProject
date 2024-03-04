@@ -92,6 +92,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Choose By Tage</mat-label>
           <mat-select class="">
+            <mat-option (click)="getTagId('')">All</mat-option>
             <mat-option *ngFor="let tage of tableTges" value="option1" 
             (click)="getTagId(tage.id)">{{tage.name}}</mat-option>
             
@@ -105,8 +106,9 @@
         <mat-form-field appearance="outline">
           <mat-label>Choose By Catogery</mat-label>
           <mat-select  [(ngModel)]="catogeryKey" name="catogeryKey">
-          
-            <mat-option (click)="getRecipes()"  *ngFor="let itemCat of tableCat" [value]="itemCat.id">{{itemCat.name}}</mat-option>
+          <mat-option (click)="getCatogeryAll()">All</mat-option>
+            <mat-option (click)="getRecipes()" 
+             *ngFor="let itemCat of tableCat" [value]="itemCat.id">{{itemCat.name}}</mat-option>
            
           </mat-select>
         </mat-form-field>
@@ -127,15 +129,7 @@
 
 
     <!-- -------------------table--------------------- -->
-    <!-- Item Name
-    Image
-    Price
-    Description
-    tag
-    Category 
-    https://upskilling-egypt.com:443/files/users/images/889eatingveganfood-rafiki.png
-https://upskilling-egypt.com/files/users/images/889eatingveganfood-rafiki.png
--->
+    
 
     <section class="">
         <div class="table-responsive text-capitalize  ">
@@ -143,8 +137,9 @@ https://upskilling-egypt.com/files/users/images/889eatingveganfood-rafiki.png
                 <thead class="is-headerTable mb-5  ">
                     
 <tr>
+  <th scope="col"class="py-4  rounded-start-4  ">Index</th>
 
-      
+                                
                         <th scope="col"class="py-4  rounded-start-4  ">Name</th>
                         <th scope="col" class="py-4">Image</th>
                         <th scope="col" class="py-4">Price</th>
@@ -159,6 +154,7 @@ https://upskilling-egypt.com/files/users/images/889eatingveganfood-rafiki.png
                 <tbody  *ngIf="tableHead">
                     <tr *ngFor="let elem of tableHead let i=index" class="">
 
+                      <td class=" bg-transparent "  scope="row">{{i+1}}</td>
 
                         <td class=" bg-transparent "  scope="row">{{elem.name}}</td>
                         <td>
@@ -246,17 +242,27 @@ https://upskilling-egypt.com/files/users/images/889eatingveganfood-rafiki.png
         
         
         <!-- ---------------------paginator------------------ -->
-        <!-- <mat-paginator *ngIf="tableHead.length>0"
-        
-        [length]="totalRespose?.totalNumberOfRecords"
-        [pageSize]="totalRespose?.pageSize"
-        [pageIndex]="totalRespose?.pageNumber"
-        [pageSizeOptions]="pageSizeOptions"
-        (page)="handlePageEvent($event)"
-        aria-label="Select page">
-        
-        </mat-paginator>
-         -->
+   
+
+<section class="bg-info">
+
+
+<mat-paginator #paginator *ngIf="tableHead.length>0"
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="resResulat?.totalNumberOfRecords"
+               [pageSize]="resResulat?.pageSize"
+               [disabled]="false"
+              
+               [pageSizeOptions]="[5,10,25,totalNumberOfRecords]"
+               
+               [pageIndex]="resResulat?.pageNumber"
+               aria-label="Select page">
+</mat-paginator>
+
+</section>
+<!-- ------------------------------------------- -->
+         <!-- -----------------not found data-------------- -->
         <section class="notData w-75 m-auto text-center" *ngIf="tableHead.length==0">
         
         <img src="../../../../assets/image/delet.svg" alt="notfound">

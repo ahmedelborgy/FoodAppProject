@@ -1,5 +1,9 @@
 
 export interface Irecipy {
+    pageNumber: number,
+  pageSize: number,
+  totalNumberOfRecords: number,
+  totalNumberOfPages: number
     data:  ItebleRecipey[];
 }
 
