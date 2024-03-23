@@ -1,3 +1,4 @@
+import { userGuard } from './../../Gurads/user.guard';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   userName:string|any=localStorage.getItem('userName');
   userGroup:string|any=localStorage.getItem('userGroup')
+ constructor(){
+  console.log(userGuard);
+  
+ }
   
 
 }

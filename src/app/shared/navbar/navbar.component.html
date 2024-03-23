@@ -18,7 +18,15 @@
 <ul class="list-unstyled   w-75 ms-auto d-flex text-dark justify-content-around 
 align-items-center">
 <li class=" d-center align-items-center">
-    <img src="assets/image/profiol-img.png" alt="profile" class="">
+    <div class=" d-flex flex-column text-center justify-content-end">
+
+  
+    <img [src]="ImgUser? pathImag+ImgUser:'assets/image/profiol-img.png'" 
+    alt="profile" class="profoileImg">
+
+
+  </div>
+
     <h4 class=" text-dark  mb-0 ms-3 text-capitalize">{{userName?userName:'Upskilling'}}</h4>
  
 </li>
@@ -35,8 +43,11 @@ align-items-center">
           <mat-icon>logout</mat-icon>
           <span>Logout</span>
          </button>
-      
-      </mat-menu>
+
+         
+
+     
+      </mat-menu> 
       
 </li>
 

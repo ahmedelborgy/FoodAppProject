@@ -7,7 +7,10 @@ import { CategoriesComponent } from './component/categories/categories.component
 import { DashbordesModule } from '../dashbordes/dashbordes.module';
 import { SharedModule } from '../shared/shared.module';
 import { AddEditCategoryComponent } from './component/add-edit-category/add-edit-category.component';
-import { RecipesComponent } from './recipes/recipes.component';
+
+import { RecipesRoutingModule } from './recipes/recipes-routing.module';
+import { UserLoggedComponent } from './user-logged/user-logged.component';
+// import { UserLoggedComponent } from './component/user-logged/user-logged.component';
 
 
 @NgModule({
@@ -15,7 +18,8 @@ import { RecipesComponent } from './recipes/recipes.component';
     AdminComponent,
     CategoriesComponent,
     AddEditCategoryComponent,
-    RecipesComponent
+
+  
   ],
   imports: [
     CommonModule,

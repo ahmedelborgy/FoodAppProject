@@ -9,7 +9,12 @@ const routes: Routes = [
   //  {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
    
    { path: 'dashbordes', canActivate:[authGuard],loadChildren: () => import('./dashbordes/dashbordes.module').
-   then(m => m.DashbordesModule) }
+   then(m => m.DashbordesModule) },
+   { path: 'user-Recipes', loadChildren: () => import('./user/user-recipes/user-recipes.module').then(m => m.UserRecipesModule) },
+   { path: 'Faviorets', loadChildren: () => import('./user/faviorets/faviorets.module').then(m => m.FavioretsModule) },
+   { path: 'userLogged', loadChildren: () => import('./admin/user-logged/user-logged.module').then(m => m.UserLoggedModule) },
+   
+  
   ];
 
 @NgModule({

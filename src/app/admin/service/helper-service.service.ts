@@ -15,4 +15,20 @@ export class HelperServiceService {
 getAllTages():Observable<any>{
   return this.http.get(`tag`);
   }
+
+// ---------------------------------
+getAllGategories(data:any):Observable<any>{
+
+  return this.http.get('Category',data)
+  
+  }
+
+
+
+
+
+
+
+
+
 }

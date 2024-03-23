@@ -94,6 +94,16 @@ resetPass(otd:any):Observable<any>{
 }
 
 
+// ------------------currentUser'----------------------
+
+currentUser():Observable<any>{
+  return this.http.get(`Users/currentUser`);
+}
+
+
+
+
+
 
 
 //  ------------------------logout------------

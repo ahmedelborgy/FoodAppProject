@@ -1,3 +1,4 @@
+<p>user-recipes works!</p>
 
 <!-- ---------------------heeader----------------- -->
 <section id="header" >
@@ -37,35 +38,8 @@
 
 
 </section>
+<!-- ----------------- -->
 
-
-
-
-<!-- ------------------------button -------------- -->
-
-<section class="container " >
-  
-
-    <section class="row mt-2  py-2 d-center" id="fillRecipes">
-    
-    <div class="col-6 ">
-        <h4 class="text-dark m-0 fs-3 "> Categories Table Details </h4>
-    
-    
-        <p class="text-dark text-opacity-50 mt-1"> 
-            You can check all details
-        </p>   
-    
-    </div>
-    
-    
-        <div class=" col-6 d-center justify-content-end">
-    <button class="btn-main d-center" routerLink="add">Add New Recipy
-        
-        
-        </button>
-        </div>
-                    <!-- -----------------------------search input---------------------------------- -->
 <section class="searchRecipy row  d-center my-4 ">
     <div class="col-6  mb-1 d-flex align-items-start">
         
@@ -118,21 +92,8 @@
 </section>
 
      
-            
-        
-        </section>
-
-    
-    
-    
-    
-    </section>
 
 
-
-
-    
-    
 
     <!-- -------------------table--------------------- -->
     
@@ -168,7 +129,8 @@
                             
                             
                        
-                        <img [src]="elem.imagePath?pathImag+elem.imagePath:dummyImg" alt="" class="recipyImg">
+                        <img [src]="elem.imagePath?pathImag+elem.imagePath:dummyImg" 
+                        alt="" class="recipyImg">
                         </td>
                         <td>{{elem.price}}</td>
                         <td>{{elem.description!='undefined'?
@@ -197,7 +159,7 @@
                               <mat-menu #menu="matMenu">
                                 
                                
-                                <button mat-menu-item>
+                     <button mat-menu-item (click)="openDialogDetailes('1500ms', '750ms',elem)">
                                
                                 <mat-icon color="primary">visibility</mat-icon>
                                   <span class="material-symbols-outlined">
@@ -205,32 +167,7 @@
                                     </span>
                                 </button>
         
-                                <button mat-menu-item  [routerLink]="['edit',elem.id]"
-                                 (click)=" openDialogRecipy()">
                                
-                                    <mat-icon color="primary">edit_square </mat-icon>
-                                     
-        
-                    <span Edit class="material-symbols-outlined">
-
-                                        Edit
-                                            </span>
-                                            
-                                    </button>
-            
-                                    <button mat-menu-item >
-                               
-                                        <mat-icon color="primary">
-                                        
-                                            delete
-                                            </mat-icon>
-                                          <span class="material-symbols-outlined">
-                                            delete
-                                            </span>
-            
-                                            
-                                                
-                                        </button>
         
                               </mat-menu>
                               
@@ -281,5 +218,4 @@
         </section>
         
         </section>
-        
         

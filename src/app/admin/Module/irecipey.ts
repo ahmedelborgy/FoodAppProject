@@ -8,6 +8,7 @@ export interface Irecipy {
 }
 
 export interface ItebleRecipey{
+item: any;
     id:               number;
     name:             string;
     imagePath:        string;

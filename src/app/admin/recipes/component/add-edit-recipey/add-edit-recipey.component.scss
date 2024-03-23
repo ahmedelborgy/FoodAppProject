@@ -1,0 +1,53 @@
+#fillRecipes{
+    background-color: #F0FFEF;
+
+    border-radius: 16px;
+    h4{
+        span{
+            color: #009247;
+           
+        }
+    }
+    button{
+        &.btn-main{
+            background-color: #009247;
+            font-size: 16px;
+            padding: 20px 60px;
+        }
+    }
+
+}
+#edit-form{
+   textarea{
+    // border-color: tomato;
+    // margin-left: 10px;
+    textarea::placeholder{
+    //   background-color: aquamarine;
+    }
+
+
+   }
+        span{
+top: 10%;
+left:13.5%;
+padding-top: 2px;
+padding-left: 2px;
+    color: #4aa35a;    
+    }
+   i{
+    color: #4aa35a !important;
+   }  
+}
+
+
+
+
+#edit-form[_ngcontent-ng-c1976816701] span[_ngcontent-ng-c1976816701] {
+    top: 10%;
+    left: 13.5%;
+    padding-top: 2px;
+    padding-left: 20px;
+    i{
+            color: #4aa35a;
+           }
+}

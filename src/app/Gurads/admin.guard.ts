@@ -5,7 +5,8 @@ export const adminGuard: CanActivateFn = (route, state) => {
   const _Router=inject(Router);
   
   
-  if(localStorage.getItem('userToken') !== null &&localStorage.getItem('userGroup')=='SuperAdmin'){
+  if(localStorage.getItem('userToken') !== null &&
+  localStorage.getItem('userGroup')=='SuperAdmin'){
     // _Router.navigate(['/dashbordes']);
     return true;
 
@@ -15,5 +16,15 @@ export const adminGuard: CanActivateFn = (route, state) => {
     
     return false;
   }
+
+
+
+
+
+
+
+
+
+ 
   
 };

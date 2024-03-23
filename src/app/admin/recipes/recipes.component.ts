@@ -37,8 +37,9 @@ constructor(
   userName:string|any=localStorage.getItem('userName');
   pathImag:string='https://upskilling-egypt.com:443/'
    dummyImg:string='../../../assets/image/recipy-images.jpeg'
-  tableHead:  ItebleRecipey[]=[];
-  tableTges:Itges[]=[];
+  
+   tableHead:  ItebleRecipey[]=[];
+  tableTages:Itges[]=[];
   tableCat:Itable[]=[];
    totalRespose: any;
    pageSize=5;
@@ -134,7 +135,7 @@ getTages(){
   this.help.getAllTages().subscribe({
 next:(res)=>{
 console.log(res);
-this.tableTges=res;
+this.tableTages=res;
 // console.log(this.tableTges);
 
 },
@@ -202,22 +203,7 @@ complete:()=>{
 
 
    openDialogRecipy(){
-//    this.RecServ.getAllRecipes().subscribe({
-//     next:(res)=>{
-// console.log(res);
-// this.tableHead=res.data;
-// console.log(this.tableHead);
 
-//     },
-//     error:(err)=>{
-// console.log(err);
-
-//     },
-//     complete:() =>{
-//       console.log('---------complet recipy-----------');
-      
-//     },
-//    })
    }
    
    

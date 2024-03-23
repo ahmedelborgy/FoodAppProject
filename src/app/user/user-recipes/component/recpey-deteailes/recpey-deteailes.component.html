@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+
+
+<section id="details">
+
+
+
+<div class="d-flex position-relative justify-content-around px-5">
+    
+    <button class="btn  deletbtn ms-auto d-block" 
+        (click)="onNoClick()"><i class="fa-solid  fa-close textc-danger">
+    
+        </i></button>
+        <h3 class="mt-5">Recipe Details</h3>
+</div>
+<mat-dialog-content id="delet" class="p-0 m-0 ">
+    <section class=" position-relative py-3 px-3">
+    
+
+
+    
+
+    <div class=" text-center text-capitalize mt-0 ">
+        <img *ngIf="!data.item.imagePath"
+         [src]="dummyImg" alt="" class="w-25">
+ 
+    
+    <img *ngIf="data.item.imagePath" [src]="pathImag+data.item.imagePath"
+     alt="" class="w-25">
+
+
+        <h3 class="m-0 p-0">{{data.item.name}} ?</h3>
+        <p>{{data.item.description}}</p>
+    </div>
+    <hr >
+    
+    <button class="btn bBtn  ms-auto d-block text-success border-1
+     border border-success" 
+       [mat-dialog-close]="data.item.id" >Add To Faviortes</button>
+    
+    </section>
+    </mat-dialog-content>
+    
+
+
+
+
+
+
+
+</section>
+
+

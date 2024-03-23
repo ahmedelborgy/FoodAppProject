@@ -36,14 +36,17 @@ link:'/dashbordes/home',
 icone:'<i class="fa-solid fa-house"></i>',
 isActive:this.isAdmin() ||this.isUser()
 },
-{text:'Users',link:'/dashbordes/admin/Users',
+{text:'Users',link:'/dashbordes/admin/userLogged',
 icone:'<i class="fa-solid fa-users"></i>',
 isActive:this.isAdmin()
 
 },
+// <i class="fa-solid fa-pizza-slice"></i>
 {text:'Recipes',link:'/dashbordes/admin/recipes',
-icone:'<i class="fa-solid fa-table-list"></i>'
-,isActive:this.isAdmin() ||this.isUser()
+// icone:'<i class="fa-solid fa-table-list"></i>'
+icone:'<i class="fa-solid fa-pizza-slice"></i>'
+
+,isActive:this.isAdmin() 
 
 },
 
@@ -57,11 +60,18 @@ isActive:this.isAdmin()
 
 
 
-{text:'Faviorets',link:'/dashbordes/Faviorets',
+{text:'Faviorets',link:'/dashbordes/user/faviorets',
 icone:' <i class="fa-regular fa-heart"></i> ',
 isActive:this.isUser()
 
-}
+},
+{text:'recipes',link:'/dashbordes/user/recipes',
+// icone:'<i class="fa-solid fa-table-list"></i>'
+icone:'<i class="fa-solid fa-pizza-slice"></i>'
+
+,isActive:this.isUser()
+
+},
 
 
 

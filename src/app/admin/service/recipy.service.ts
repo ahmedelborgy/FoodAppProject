@@ -15,14 +15,22 @@ export class RecipyService {
 
     }
     
-// ==================getAllTages===============
-// getAllTages():Observable<any>{
-// return this.http.get(`tag`)
-// }
+// ----------add Recipey-----
+
+addRecipey(data:any):Observable<any>{
+  return this.http.post(`Recipe`,data);
+}
+// --------------get Recipey by id
+getRecipeyById(id:number):Observable <any>{
+return this.http.get(`Recipe/${id}`);
 
 
 
-
+}
+// --------Edit Recipey---------
+editRecipey(data:any,id:number):Observable<any>{
+  return this.http.put(`Recipe/${id}`,data);
+}
 
 
 

@@ -1,0 +1,75 @@
+
+<!-- ---------------------heeader----------------- -->
+<section id="header" >
+    <section class="container ">
+        <section class="row flex-nowrap d-center">
+          
+
+
+         <figcaption class="col-6  d-flex flex-column justify-content-center  ps-5 text-white ">
+            <h2 class="text-start">Favorite
+               <span class=" text-capitalize">Item</span></h2>
+          
+          
+          
+                <p class="">You can now add your items that any user can order it from the Application and you can edit
+            </p>
+        </figcaption>
+
+
+        <div class="col-6  ">
+
+       
+        <figure class=" m-0 d-flex justify-content-end ">
+       <img src="../../../../assets/image/child-header.svg" alt="home-img" 
+       class="w-25 d-block ">
+       </figure>
+
+    </div>
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="container my-3" id="fav">
+<section class="row gy-3 ">
+<section class="col-md-4" *ngFor="let item of tableRecpey">
+    <div class="item bg-white shadow position-relative">
+
+<!-- <img src="../../../assets/image/auth.bg.png" class="img-fluid" alt=""> -->
+
+<img [src]="item.recipe.imagePath?pathImag+item.recipe.imagePath:dummyImg" class="img-fluid" alt="">
+
+
+<div class="content p-2">
+<h4>{{item.recipe.name}}</h4>
+<p>{{item.recipe.description}}</p>
+<p>{{item.creationDate |date}}</p>
+</div>
+
+<div class="layer" (click)="removeItem(item.id)">
+    <i class="fa-solid fa-heart text-success fs-2"></i>
+</div>
+    </div>
+</section>
+</section>
+</section>

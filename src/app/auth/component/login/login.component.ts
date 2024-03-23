@@ -195,22 +195,6 @@ onForgetPassw(result:FormGroup){
 
 
 
-// this.auth.sendEmailForgetPass(result).subscribe({
-
-  
-//   next:(res)=>{
-//     console.log(res);
-    
-//   },
-//   error:(err)=>{
-//     console.log(err);
-    
-//   },
-//   complete:()=>{
-//     console.log('----forget email------');
-    
-//   }
-// })
 
 
 

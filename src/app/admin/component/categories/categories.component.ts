@@ -106,8 +106,12 @@ this.catgSrv.getAllGategories(
 
   // ----------------------openDialogAddCategory to add Catogery--------------
 
-    openDialogAddCategory(): void {
+    openDialogAddCategory(enterAnimationDuration: string, exitAnimationDuration:string): void {
       const dialogRef = this.dialog.open(AddEditCategoryComponent, {
+        width: '500px',
+        enterAnimationDuration,
+        exitAnimationDuration,
+        
         data: {
           is_Admin: this.userName,
           dialogWork:'Add-Category'},
@@ -152,8 +156,13 @@ this.toastr.success('add catogery '+ this.is_message, 'Toastr fun!');
 
 
   // ----------------------openDialogEditCategory to Edit Catogery--------------
-  openDialoEditCategory(dataCat:any): void {
+  openDialoEditCategory(enterAnimationDuration: string, exitAnimationDuration:string,dataCat:any): void {
   const dialogRef = this.dialog.open(AddEditCategoryComponent, {
+    width: '500px',
+    enterAnimationDuration,
+    exitAnimationDuration,
+
+
    data: 
    {
        
@@ -209,12 +218,10 @@ this.toastr.success('edit catogery '+ this.is_message, 'Toastr fun!');
 
 // ====================Delet Category========
 
-openDeletDialog(enterAnimationDuration: string, exitAnimationDuration: string,itemData:any): void {
-  // this.dialog.open(DeletComponent, {
-  //   // width: '250px',
-  //   // enterAnimationDuration,
-  //   // exitAnimationDuration,
-  // });
+openDeletDialog(enterAnimationDuration: string, exitAnimationDuration:string,
+  
+  itemData:any): void {
+  
   
   
   const dialogRef = this.dialog.open(DeletComponent, {

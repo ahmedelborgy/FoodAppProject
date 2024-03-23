@@ -52,17 +52,23 @@
 <section class="row mt-2 ps-5 py-2 d-center" id="fillRecipes">
 
 <div class="col-6 ">
-    <h4 class="text-dark fw-semibold m-0">Fill the <span class="text-main fw-bold">Recipes</span> !</h4>
+    <h4 class="text-dark fw-semibold m-0">Fill the <span class="text-main fw-bold">Recipes
+
+    </span> !</h4>
 
 
-    <p class="text-dark"> you can now fill the meals easily using the table and form , click here and sill it with the table !
+    <p class="text-dark"> you can now fill the meals easily using the table and form ,
+         click here and sill it with the table !
     </p>   
 
 </div>
 
 
     <div class=" col-6 d-center justify-content-end">
-<button class="btn-main d-center">Fill Recipes <span><i class="fa-solid ms-2 fa-arrow-right "></i></span></button>
+<button class="btn-main d-center" routerLink="/dashbordes/admin/recipes">Fill Recipes
+     <span><i class="fa-solid ms-2 fa-arrow-right ">
+
+</i></span></button>
     </div>
     
     
@@ -73,6 +79,20 @@
 
 </section>
 
-    <!-- ---------------end  Fill the Recipes  of home ---------------->
+
+
+
+
+<!-- ---------------end  Fill the Recipes  of home ---------------->
    
+<div id="fillRecipes" class="ps-5 py-5 pt-5 d-center" *ngIf="userGroup == 'SystemUser' " class=" col-12 d-center justify-content-between my-2">
+
+    <p class="text-dark ps-5 py-3"> you can view All meals and add meals to faviorets
+   </p>  
+
+
+    <button class="btn-main bg-main d-center my-3" routerLink="/dashbordes/user/recipes">Recipes
+         <span><i class="fa-solid ms-2 fa-arrow-right ">
     
+    </i></span></button>
+        </div>

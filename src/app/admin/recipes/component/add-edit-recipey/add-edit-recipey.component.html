@@ -1,0 +1,143 @@
+<main class="h-100">
+
+
+<section class="row w-100 m-auto mt-2 ps-5 py-4 d-center " id="fillRecipes">
+
+    <div class="col-6 ">
+        <h4 class="text-dark fw-semibold m-0">Fill the <span class="text-main fw-bold">Recipes</span> !</h4>
+    
+    
+        <p class="text-dark"> you can now fill the meals easily using the table and form , click here and sill it with the table !
+        </p>   
+    
+    </div>
+    
+    
+        <div class=" col-6 d-center justify-content-end">
+    <button routerLink="/dashbordes/admin/recipes" class="btn-main d-center">All Recipes <span><i class="fa-solid ms-2 fa-arrow-right "></i></span></button>
+        </div>
+        
+        
+        </section>
+   
+   <section class="w-75 d-center  m-auto"  id="form">
+
+<form [formGroup]="recipesForm"   class="w-100" id="edit-form" 
+(ngSubmit)="onAddEditRecipey(recipesForm)">
+
+
+
+
+
+
+<!-- ---------------------recipey Name------------------ -->
+
+    <div class="input-group flex-nowrap py-3">
+        <span class="input-group-text px-3" id="addon-wrapping"> 
+         
+          <i class="fa-solid fa-utensils"></i>
+
+        </span>
+        <input  formControlName="name" type="text" 
+        class="form-control" placeholder="Recipey Name">
+      </div>
+
+<!-- ---------------------recipey tage ------------------ -->
+
+<div class="input-group flex-nowrap py-3">
+    <span class="input-group-text px-3" id="addon-wrapping"> 
+     
+<i class="fa-solid fa-tag"></i>
+    </span>
+    
+    <select formControlName="tagId" class="form-select" aria-label="Default select example">
+     
+      <option value="" selected [ngValue]=" ">All</option>
+
+      <option *ngFor="let tag of tableTages" [ngValue]="tag.id">{{tag.name}}</option>
+
+    </select>
+</div>
+
+
+<!-- ---------------------recipey categoriesIds ------------------ -->
+
+<div class="input-group flex-nowrap py-3">
+  <span class="input-group-text px-3" id="addon-wrapping"> 
+   
+<i class="fa-solid fa-tag"></i>
+  </span>
+  <select  formControlName="categoriesIds" class="form-select "  
+  aria-label="categoriesIds" >
+    <!-- <option selected>categoriesIds</option> -->
+   <option *ngFor="let cat of tableCat" [value]="cat.id">
+    {{cat.name}}</option>
+  </select>
+ 
+</div>
+
+<!-- --- -->
+
+
+<!-- ---------------------recipey price ------------------ -->
+
+<div class="input-group flex-nowrap py-3 text-center ">
+    <span class="input-group-text px-3 " id="addon-wrapping"> 
+     
+      <i class="fa-solid fa-dollar-sign "></i>
+    </span>
+    <input  formControlName="price" type="number" 
+    class="form-control" placeholder="price">
+  </div>
+
+<div class="mb-3 position-relative ">
+ 
+  <textarea placeholder="Description "
+   class="form-control position-relative ps-4 w-100"
+   name="" id="" rows="4" formControlName="description"></textarea >
+<span  class="position-absolute  text-danger">*</span>
+</div>
+
+
+ <!-- ------------------------------UserImage------------------- -->
+ <ngx-dropzone #drop (change)="onSelect($event)" class="h-25 w-100 m-auto " 
+ accept="image/jpeg,image/jpg,image/png,image/gif">
+ 
+   <ngx-dropzone-label class="d-center flex-column ">
+    <!-- <mat-icon>backup</mat-icon> -->
+    
+     <i class="fa-solid fa-arrow-up-from-bracket fs-5 py-1"></i>
+    <p>Drag & Drop or<span class="text-main p-0 m-0"> Choose a Item Image to</span> Upload </p>    <!-- <i class="fa-regular p-1 fa-square-caret-up fs-3 bg-main text-white"></i> -->
+    </ngx-dropzone-label>
+   
+   <ngx-dropzone-image-preview class="d-center"  formControlName="recipeImage"
+   ngProjectAs="ngx-dropzone-preview" 
+   *ngFor="let f of files" [removable]="true"  [file]="f" 
+   (removed)="onRemove(f)">
+   <button mat-icon-button (click)="onRemove(f)" class="bg-info p-5" >
+     <mat-icon aria-label="Delete">delete</mat-icon>
+   </button>
+   </ngx-dropzone-image-preview>
+ </ngx-dropzone>
+ 
+ <!-- ============ button========= -->
+ <div class="my-3 d-flex justify-content-end">
+  <button class=" btn bg-white text-success px-5 mx-4 border-1 border-success"routerLink="/dashbordes/admin/recipes">Cancel</button>
+
+  <button class="bg-main btn text-white px-4">{{btnSave}}</button>
+ </div>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+   </section>
+   
+    </main>
