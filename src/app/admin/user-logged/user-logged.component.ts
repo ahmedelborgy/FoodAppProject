@@ -67,7 +67,7 @@ this.userServ.getAllUsersLogged(parms).subscribe({
     
       data: {id:idUser},
     });
-
+// ahmedd
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed',result);
       // this.animal = result;
