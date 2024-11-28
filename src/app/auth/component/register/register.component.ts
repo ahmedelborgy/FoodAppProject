@@ -227,7 +227,7 @@ console.log(res);
 this.is_messVerify=res.message;
 console.log(this.is_messVerify);
 
-this._Router.navigate(['/login'])
+this._Router.navigate(['/login']);
   },
   error:(err)=>{
     console.log(err);
